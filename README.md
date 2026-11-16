@@ -42,6 +42,10 @@ Start the application:
 npm start
 ```
 
+The project uses `.openai/hosting.json` when it is available. If a manual copy
+does not include hidden files, the local build automatically falls back to the
+`DB` D1 binding and remains fully functional for development and testing.
+
 ## Administrator dashboard
 
 - Demo password: `admin123`

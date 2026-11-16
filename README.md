@@ -1,28 +1,28 @@
 # StayPilot
 
-Demonstracyjna aplikacja do rezerwacji hoteli przygotowana na potrzeby kursu **AI for QA**. Projekt służy do nauki automatyzacji testów z użyciem Codexa i Playwrighta.
+A hotel booking demo application built for the **AI for QA** course. The project is designed for learning test automation with Codex and Playwright.
 
-## Stack
+## Tech stack
 
-- React 19 + TypeScript
-- Vinext / Vite
+- React 19 and TypeScript
+- Vinext and Vite
 - API routes
-- Cloudflare D1 + Drizzle ORM
+- Cloudflare D1 and Drizzle ORM
 - Cloudflare Workers
 
-## Funkcje
+## Features
 
-- wyszukiwanie i filtrowanie hoteli,
-- formularz rezerwacji z walidacją po stronie API,
-- wyszukiwanie rezerwacji po adresie e-mail,
-- panel administratora,
-- zmiana statusu rezerwacji,
-- reset danych testowych,
-- stabilne selektory `data-testid` przygotowane pod Playwright.
+- Hotel search and filtering
+- Booking form with server-side validation
+- Booking lookup by email address
+- Administrator dashboard
+- Booking status management
+- Test data reset
+- Stable `data-testid` selectors for Playwright
 
-## Uruchomienie
+## Getting started
 
-Wymagany jest Node.js `>=22.13.0`.
+Node.js `>=22.13.0` is required.
 
 ```bash
 npm ci
@@ -30,32 +30,32 @@ npm run db:generate
 npm run build
 ```
 
-Migrację lokalnej bazy D1 można zastosować poleceniem:
+Apply the migration to the local D1 database:
 
 ```bash
 node --import ./scripts/sites-env.mjs ./node_modules/wrangler/bin/wrangler.js d1 execute DB --local --config dist/server/wrangler.json --persist-to .wrangler/state --file drizzle/0000_woozy_leader.sql
 ```
 
-Następnie uruchom aplikację:
+Start the application:
 
 ```bash
 npm start
 ```
 
-## Panel administratora
+## Administrator dashboard
 
-- hasło demonstracyjne: `admin123`
-- endpoint API: `/api/bookings`
+- Demo password: `admin123`
+- API endpoint: `/api/bookings`
 
-Hasło jest celowo jawne, ponieważ projekt jest środowiskiem szkoleniowym, a nie aplikacją produkcyjną.
+The password is intentionally included in the source because this is a training environment, not a production application.
 
-## Przykładowe scenariusze Playwright
+## Suggested Playwright scenarios
 
-1. Wyszukanie hotelu po mieście.
-2. Utworzenie poprawnej rezerwacji.
-3. Walidacja błędnego adresu e-mail lub dat.
-4. Odczyt rezerwacji po adresie e-mail.
-5. Logowanie do panelu administratora.
-6. Zmiana statusu rezerwacji.
-7. Filtrowanie rezerwacji według statusu.
-8. Reset danych testowych.
+1. Search for a hotel by city.
+2. Create a valid booking.
+3. Validate an invalid email address or date range.
+4. Look up a booking by email address.
+5. Sign in to the administrator dashboard.
+6. Change a booking status.
+7. Filter bookings by status.
+8. Reset the test data.

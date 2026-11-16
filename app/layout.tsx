@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "StayPilot — rezerwacje hoteli",
-  description: "Aplikacja demonstracyjna React + API do nauki testów Playwright.",
+  title: "StayPilot — hotel bookings",
+  description: "A React and API demo application for learning Playwright testing.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pl">
+    <html lang="en">
       <body className="antialiased">{children}</body>
     </html>
   );
